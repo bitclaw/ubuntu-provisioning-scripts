@@ -8,3 +8,40 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+[alias]
+	# To update your local branch with the newest changes from develop, placing your work on top of everybody else's:
+	top = !git fetch origin develop && git rebase origin/develop
+	# Push rebased branch from top alias and also always use IP v4 due to VPN issue
+        top-push = git push --force-with-lease -4
+	# (repo mainteiner only) To update a remote branch with the newest changes from develop, push it back to remote and delete the temporary local branch:
+        top-remote = "!f() { \
+            git fetch origin $1; \
+            git checkout -b $1 origin/$1; \
+            git fetch origin develop;  \
+            git rebase origin/develop;  \
+            git push -f;  \
+            git checkout develop;  \
+            git branch -D $1; \
+        }; f"
+       # one-line log
+       l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+       a = add
+       ap = add -p
+       c = commit --verbose
+       ca = commit -a --verbose
+       cm = commit -m
+       cam = commit -a -m
+       m = commit --amend --verbose
+   
+       d = diff
+       ds = diff --stat
+       dc = diff --cached
+   
+       s = status -s
+       co = checkout
+       cob = checkout -b
+       # list branches sorted by last modified
+       b = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
+   
+       # list aliases
+       la = "!git config -l | grep alias | cut -c 7-"
