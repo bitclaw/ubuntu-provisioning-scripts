@@ -28,6 +28,7 @@
        a = add
        ap = add -p
        c = commit --verbose
+       cc = "!git commit --amend -m "
        ca = commit -a --verbose
        cm = commit -m
        cam = commit -a -m
@@ -45,3 +46,11 @@
    
        # list aliases
        la = "!git config -l | grep alias | cut -c 7-"
+       amend = !git add -A && git commit --amend --no-edit
+       p = !git push origin $(git rev-parse --abbrev-ref HEAD)
+       # “no merge commits” policy, rebasing the norm. This
+       # command that fetches from all the remotes, syncs
+       # the remote change from origin, and applies your
+       # commits on top of them.
+       f = !git fetch --all && git rebase origin/master
+
