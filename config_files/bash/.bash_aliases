@@ -1,3 +1,5 @@
+alias 39dg-web="cd ~/code/39dg/39dg-web"
+
 [branch]
 	autosetuprebase = always
 [core]
