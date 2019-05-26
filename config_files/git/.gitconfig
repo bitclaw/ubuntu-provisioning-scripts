@@ -13,7 +13,7 @@
 	top = !git fetch origin develop && git rebase origin/develop
 	# Push rebased branch from top alias and also always use IP v4 due to VPN issue
         top-push = git push --force-with-lease -4
-	# (repo mainteiner only) To update a remote branch with the newest changes from develop, push it back to remote and delete the temporary local branch:
+	# (repo maintainer only) To update a remote branch with the newest changes from develop, push it back to remote and delete the temporary local branch:
         top-remote = "!f() { \
             git fetch origin $1; \
             git checkout -b $1 origin/$1; \
