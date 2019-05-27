@@ -31,8 +31,20 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 sudo usermod -aG docker danielc
 docker run hello-world
+sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 sudo apt install gnome-shell-extensions -y
 sudo apt install chrome-gnome-shell -y
 sudo apt-get install gir1.2-gtop-2.0 gir1.2-networkmanager-1.0  gir1.2-clutter-1.0 -y
 sudo apt install gnome-shell-extension-system-monitor -y
+sudo apt install vokoscreen -y
+# Cisco anyconnect VPN
 sudo apt-get install lib32z1 lib32ncurses5 -y
+# wget https://it2.umn.edu/services/all/data-network/vpn/downloads/anyconnect-linux64-4.6.03049-predeploy-k9.tar.gz
+sudo apt install openconnect -y
+# Other VPN's
+sudo apt install network-manager-l2tp-gnome strongswan strongswan-plugin-openssl network-manager-l2tp strongswan-libcharon strongswan-charon strongswan-starter libstrongswan libstrongswan-standard-plugins xl2tpd
+sudo apt install python3-pip -y
+pip3 install awscli --upgrade --user
+# eval "$(ssh-agent -s)"
+curl -fsSL https://github.com/Schniz/fnm/raw/master/.ci/install.sh | bash
