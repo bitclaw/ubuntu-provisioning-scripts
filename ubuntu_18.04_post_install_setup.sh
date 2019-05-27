@@ -72,3 +72,6 @@ sudo apt install oracle-java10-set-default
 wget https://releases.hashicorp.com/vagrant/2.2.4/vagrant_2.2.4_x86_64.deb
 sudo dpkg -i vagrant_2.2.4_x86_64.deb
 vagrant plugin install vagrant-env
+
+wget https://download.virtualbox.org/virtualbox/6.0.8/Oracle_VM_VirtualBox_Extension_Pack-6.0.8.vbox-extpack
+sudo VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-6.0.8.vbox-extpack
