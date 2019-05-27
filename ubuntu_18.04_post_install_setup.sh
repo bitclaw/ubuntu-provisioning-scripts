@@ -51,3 +51,12 @@ sudo apt-get update;sudo apt-get install remmina remmina-plugin-rdp libfreerdp-p
 sudo apt install wine64
 sudo apt install vim
 sudo apt upgrade
+sudo apt install winetricks -y
+
+# Virtualbox 6.0.6 install
+wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
+sudo add-apt-repository "deb http://download.virtualbox.org/virtualbox/debian bionic contrib"
+sudo apt update
+echo "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
+sudo apt install virtualbox-6.0 -y
