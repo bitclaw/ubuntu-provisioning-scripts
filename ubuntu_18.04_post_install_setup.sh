@@ -60,3 +60,12 @@ sudo add-apt-repository "deb http://download.virtualbox.org/virtualbox/debian bi
 sudo apt update
 echo "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
 sudo apt install virtualbox-6.0 -y
+
+sudo add-apt-repository ppa:webupd8team/java -y
+sudo apt update -y
+
+sudo apt install oracle-java10-installer
+sudo apt install oracle-java10-set-default
+
+#sudo apt install oracle-java8-installer
+#sudo apt install oracle-java8-set-default
