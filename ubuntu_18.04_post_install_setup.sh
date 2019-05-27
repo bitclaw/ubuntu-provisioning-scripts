@@ -69,3 +69,6 @@ sudo apt install oracle-java10-set-default
 
 #sudo apt install oracle-java8-installer
 #sudo apt install oracle-java8-set-default
+wget https://releases.hashicorp.com/vagrant/2.2.4/vagrant_2.2.4_x86_64.deb
+sudo dpkg -i vagrant_2.2.4_x86_64.deb
+vagrant plugin install vagrant-env
