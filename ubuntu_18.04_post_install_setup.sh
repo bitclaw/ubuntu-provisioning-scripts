@@ -14,8 +14,6 @@ sudo add-apt-repository ppa:alexlarsson/flatpak
 sudo apt update;sudo apt install flatpak -y
 sudo apt install gnome-software-plugin-flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main'
-sudo apt-get install --install-recommends winehq-stable -y
 sudo apt purge ubuntu-web-launchers -y
 sudo apt install git -y
 wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
@@ -48,3 +46,8 @@ sudo apt install python3-pip -y
 pip3 install awscli --upgrade --user
 # eval "$(ssh-agent -s)"
 curl -fsSL https://github.com/Schniz/fnm/raw/master/.ci/install.sh | bash
+sudo apt-add-repository ppa:remmina-ppa-team/remmina-next -y
+sudo apt-get update;sudo apt-get install remmina remmina-plugin-rdp libfreerdp-plugins-standard -y
+sudo apt install wine64
+sudo apt install vim
+sudo apt upgrade
