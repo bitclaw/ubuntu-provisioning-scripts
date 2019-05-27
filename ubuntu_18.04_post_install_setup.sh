@@ -40,7 +40,7 @@ sudo apt install vokoscreen -y
 sudo apt-get install lib32z1 lib32ncurses5 -y
 # wget https://it2.umn.edu/services/all/data-network/vpn/downloads/anyconnect-linux64-4.6.03049-predeploy-k9.tar.gz
 sudo apt install openconnect -y
-# Other VPN's
+# Other VPN's : Phase1 Algorithms : 3des-sha1-modp1024 Phase2 Algorithms : 3des-sha1 for l2tpsec
 sudo apt install network-manager-l2tp-gnome strongswan strongswan-plugin-openssl network-manager-l2tp strongswan-libcharon strongswan-charon strongswan-starter libstrongswan libstrongswan-standard-plugins xl2tpd
 sudo apt install python3-pip -y
 pip3 install awscli --upgrade --user
