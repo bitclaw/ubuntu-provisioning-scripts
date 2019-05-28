@@ -76,7 +76,19 @@ vagrant plugin install vagrant-env
 wget https://download.virtualbox.org/virtualbox/6.0.8/Oracle_VM_VirtualBox_Extension_Pack-6.0.8.vbox-extpack
 sudo VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-6.0.8.vbox-extpack
 
+sudo add-apt-repository ppa:linuxuprising/shutter -y
+sudo apt update
 sudo apt install shutter -y
+sudo apt install gnome-web-photo
+#wget http://ftp.us.debian.org/debian/pool/main/libg/libgoo-canvas-perl/libgoo-canvas-perl_0.06-2+b3_amd64.deb
+#wget https://debian.pkgs.org/9/debian-main-amd64/perl-base_5.24.1-3+deb9u5_amd64.deb.html
+#dpkg -i
+#dpkg -i libgoo-canvas-perl_0.06-2+b3_amd64.deb
+#wget http://ftp.us.debian.org/debian/pool/main/g/goocanvas/libgoocanvas3_1.0.0-1_amd64.deb
+#dpkg -i libgoocanvas3_1.0.0-1_amd64.deb
+#wget http://ftp.us.debian.org/debian/pool/main/g/goocanvas/libgoocanvas-common_1.0.0-1_all.deb
+#dpkg -i libgoocanvas-common_1.0.0-1_all.deb
+
 # Check which graphic card is being used:
 # See https://nouveau.freedesktop.org/wiki/CodeNames/
 # i.e:
@@ -91,3 +103,8 @@ sudo apt install shutter -y
 sudo apt install openjdk-8-jre -y
 # sudo apt install openjdk-11-jre -y
 # sudo update-alternatives --config java
+
+sudo apt install dconf-tools -y
+
+wget https://zoom.us/client/latest/zoom_amd64.deb
+sudo dpkg -i zoom_amd64.deb
