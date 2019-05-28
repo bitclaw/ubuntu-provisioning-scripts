@@ -75,3 +75,19 @@ vagrant plugin install vagrant-env
 
 wget https://download.virtualbox.org/virtualbox/6.0.8/Oracle_VM_VirtualBox_Extension_Pack-6.0.8.vbox-extpack
 sudo VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-6.0.8.vbox-extpack
+
+sudo apt install shutter -y
+# Check which graphic card is being used:
+# See https://nouveau.freedesktop.org/wiki/CodeNames/
+# i.e:
+# OpenGL vendor string: nouveau
+# OpenGL renderer string: NV136 (This code would be GeForce GTX 1060)
+# glxinfo|egrep "OpenGL vendor|OpenGL renderer*"
+
+# Install different Java versions. Use openjdk version since the The Oracle JDK License has changed for releases
+# starting April 16, 2019. See https://www.oracle.com/technetwork/java/javase/overview/oracle-jdk-faqs.html and
+# also https://launchpad.net/~webupd8team/+archive/ubuntu/java. PPA is no longer maintained, thanks Oracle!
+# sudo apt --names-only search "openjdk-.*jre$"
+sudo apt install openjdk-8-jre -y
+# sudo apt install openjdk-11-jre -y
+# sudo update-alternatives --config java
