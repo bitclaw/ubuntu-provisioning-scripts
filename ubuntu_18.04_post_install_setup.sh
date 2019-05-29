@@ -61,14 +61,6 @@ sudo apt update
 echo "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
 sudo apt install virtualbox-6.0 -y
 
-sudo add-apt-repository ppa:webupd8team/java -y
-sudo apt update -y
-
-sudo apt install oracle-java10-installer
-sudo apt install oracle-java10-set-default
-
-#sudo apt install oracle-java8-installer
-#sudo apt install oracle-java8-set-default
 wget https://releases.hashicorp.com/vagrant/2.2.4/vagrant_2.2.4_x86_64.deb
 sudo dpkg -i vagrant_2.2.4_x86_64.deb
 vagrant plugin install vagrant-env
