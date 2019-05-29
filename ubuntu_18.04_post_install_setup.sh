@@ -93,6 +93,8 @@ sudo apt install gnome-web-photo
 # also https://launchpad.net/~webupd8team/+archive/ubuntu/java. PPA is no longer maintained, thanks Oracle!
 # sudo apt --names-only search "openjdk-.*jre$"
 sudo apt install openjdk-8-jre -y
+# Used for Java Development, previous package only installs runtime
+sudo apt install openjdk-8-jdk -y
 # sudo apt install openjdk-11-jre -y
 # sudo update-alternatives --config java
 
