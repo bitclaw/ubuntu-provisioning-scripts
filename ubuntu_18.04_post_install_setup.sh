@@ -95,6 +95,7 @@ sudo apt install gnome-web-photo
 sudo apt install openjdk-8-jre -y
 # Used for Java Development, previous package only installs runtime
 sudo apt install openjdk-8-jdk -y
+sudo apt install maven
 # sudo apt install openjdk-11-jre -y
 # sudo update-alternatives --config java
 
