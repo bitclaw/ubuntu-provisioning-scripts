@@ -107,3 +107,13 @@ sudo dpkg -i zoom_amd64.deb
 # VPN Setup
 sudo apt install network-manager-l2tp-gnome strongswan network-manager-l2tp strongswan-libcharon strongswan-charon strongswan-starter libstrongswan libstrongswan-standard-plugins xl2tpd
 sudo apt install intltool libtool network-manager-dev libnm-util-dev libnm-glib-dev libnm-glib-vpn-dev libnm-gtk-dev libnm-dev libnma-dev ppp-dev libdbus-glib-1-dev libsecret-1-dev libgtk-3-dev libglib2.0-dev xl2tpd strongswan
+
+# Hamachi needed dependency
+sudo apt install lsb -y
+wget https://vpn.net/installers/logmein-hamachi_2.1.0.198-1_amd64.deb
+sudo dpkg -i logmein-hamachi*.deb
+sudo service hamachi start
+
+# Install Haguichi. This is to give GUI control of Hamachi and avoid terminal commands
+sudo add-apt-repository -y ppa:webupd8team/haguichi
+sudo apt update;sudo apt install -y haguichi
