@@ -48,10 +48,8 @@ pip3 install awscli --upgrade --user
 curl -fsSL https://github.com/Schniz/fnm/raw/master/.ci/install.sh | bash
 sudo apt-add-repository ppa:remmina-ppa-team/remmina-next -y
 sudo apt-get update;sudo apt-get install remmina remmina-plugin-rdp libfreerdp-plugins-standard -y
-sudo apt install wine64
 sudo apt install vim
 sudo apt upgrade
-sudo apt install winetricks -y
 
 # Virtualbox 6.0.6 install
 wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
@@ -117,3 +115,19 @@ sudo service hamachi start
 # Install Haguichi. This is to give GUI control of Hamachi and avoid terminal commands
 sudo add-apt-repository -y ppa:webupd8team/haguichi
 sudo apt update;sudo apt install -y haguichi
+
+# Install wine
+sudo dpkg --add-architecture i386
+wget -qO - https://dl.winehq.org/wine-builds/winehq.key | sudo apt-key add -
+###  Ubuntu 18.10
+# sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ cosmic main'
+###  Ubuntu 18.04
+sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main'
+sudo apt update
+sudo apt install --install-recommends winehq-stable
+# If you face unmet dependencies error during installation,
+# use the following commands to install winehq using aptitude.
+# sudo apt-get install aptitude
+# sudo aptitude install winehq-stable
+sudo apt install winetricks -y
+
