@@ -131,3 +131,14 @@ sudo apt install --install-recommends winehq-stable
 # sudo aptitude install winehq-stable
 sudo apt install winetricks -y
 
+# See https://www.percona.com/doc/percona-xtrabackup/LATEST/installation/apt_repo.html
+# https://www.percona.com/blog/2018/04/02/migrate-to-amazon-rds-with-percona-xtrabackup/
+# Installing Percona XtraBackup from Percona apt repository
+wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.deb
+sudo dpkg -i percona-release_latest.$(lsb_release -sc)_all.deb
+sudo percona-release enable-only tools release
+sudo apt update;sudo apt install percona-xtrabackup-80 -y
+# Uninstall
+# sudo apt remove percona-xtrabackup-80
+
+
