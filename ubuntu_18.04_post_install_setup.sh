@@ -141,4 +141,37 @@ sudo apt update;sudo apt install percona-xtrabackup-80 -y
 # Uninstall
 # sudo apt remove percona-xtrabackup-80
 
+# Install MongoDB GUI: RoboMongo and NoSQLBooster
+wget https://download-test.robomongo.org/linux/robo3t-1.3.1-linux-x86_64-7419c406.tar.gz
+tar zxvf robo3t-1.3.1-linux-x86_64-7419c406.tar.gz
+rm robo3t-1.3.1-linux-x86_64-7419c406.tar.gz
+mv robo3t-1.3.1-linux-x86_64-7419c406 ~/
+cd ~/robo3t-1.3.1-linux-x86_64-7419c406/bin
+wget https://robomongo.org/static/robomongo-128x128-129df2f1.png
+
+cd ~/.local/share/applications/
+cat <<EOT >> robo3t.desktop
+[Desktop Entry]
+Name=RoboMongo for MongoDB
+Comment=Essential admin GUI for mongodb
+Exec="/home/danielc/robo3t-1.3.1-linux-x86_64-7419c406/bin/robo3t" %f
+Terminal=false
+Type=Application
+Icon=/home/danielc/robo3t-1.3.1-linux-x86_64-7419c406/bin/robomongo-128x128-129df2f1.png
+StartupWMClass=RoboMongo for MongoDB
+Categories=Development;
+EOT
+# cd ~/robo3t-1.3.1-linux-x86_64-7419c406/bin
+# ./robo3t
+
+wget https://nosqlbooster.com/s3/download/releasesv5/nosqlbooster4mongo-5.1.8.AppImage
+mkdir -p ~/nosqlbooster
+mv nosqlbooster4mongo*.AppImage ~/nosqlbooster
+cd ~/nosqlbooster
+chmod a+x nosqlbooster4mongo*.AppImage
+./nosqlbooster4mongo*.AppImage
+# To remove preferences, delete the folder ~/.config/NoSQLBooster for MongoDB
+# Also remove menu entry by deleting the desktop file from $HOME/.local/share/applications/
+
+
 
