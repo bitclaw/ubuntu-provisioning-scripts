@@ -173,5 +173,12 @@ chmod a+x nosqlbooster4mongo*.AppImage
 # To remove preferences, delete the folder ~/.config/NoSQLBooster for MongoDB
 # Also remove menu entry by deleting the desktop file from $HOME/.local/share/applications/
 
+# Jetbrains inotify increase max user watches to improve IDE performance
+cd /etc/sysctl.d/
+sudo touch /etc/sysctl.d/60-idea.conf
+sudo bash -c 'echo "fs.inotify.max_user_watches = 524288" > 60-idea.conf'
+# sudo echo "fs.inotify.max_user_watches = 524288" > /etc/sysctl.d/60-idea.conf
+# sudo sysctl -p --system
+sudo service procps start
 
 
