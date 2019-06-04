@@ -181,4 +181,5 @@ sudo bash -c 'echo "fs.inotify.max_user_watches = 524288" > 60-idea.conf'
 # sudo sysctl -p --system
 sudo service procps start
 
-
+# Install NFS server, used for vagrant shared folder sometimes
+sudo apt install nfs-kernel-server -y
