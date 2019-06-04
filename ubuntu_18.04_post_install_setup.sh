@@ -124,12 +124,13 @@ wget -qO - https://dl.winehq.org/wine-builds/winehq.key | sudo apt-key add -
 ###  Ubuntu 18.04
 sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main'
 sudo apt update
-sudo apt install --install-recommends winehq-stable
+# sudo apt install --install-recommends winehq-stable
 # If you face unmet dependencies error during installation,
 # use the following commands to install winehq using aptitude.
 # sudo apt-get install aptitude
 # sudo aptitude install winehq-stable
-sudo apt install winetricks -y
+# sudo apt install winetricks -y
+sudo apt install playonlinux
 
 # See https://www.percona.com/doc/percona-xtrabackup/LATEST/installation/apt_repo.html
 # https://www.percona.com/blog/2018/04/02/migrate-to-amazon-rds-with-percona-xtrabackup/
