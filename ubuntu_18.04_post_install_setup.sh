@@ -143,12 +143,12 @@ sudo apt update;sudo apt install percona-xtrabackup-80 -y
 # sudo apt remove percona-xtrabackup-80
 
 # Install MongoDB GUI: RoboMongo and NoSQLBooster
-wget https://download-test.robomongo.org/linux/robo3t-1.3.1-linux-x86_64-7419c406.tar.gz
+curl -o robo3t-1.3.1-linux-x86_64-7419c406.tar.gz https://download-test.robomongo.org/linux/robo3t-1.3.1-linux-x86_64-7419c406.tar.gz
 tar zxvf robo3t-1.3.1-linux-x86_64-7419c406.tar.gz
 rm robo3t-1.3.1-linux-x86_64-7419c406.tar.gz
 mv robo3t-1.3.1-linux-x86_64-7419c406 ~/
 cd ~/robo3t-1.3.1-linux-x86_64-7419c406/bin
-wget https://robomongo.org/static/robomongo-128x128-129df2f1.png
+curl -o robomongo-128x128-129df2f1.png https://robomongo.org/static/robomongo-128x128-129df2f1.png
 
 cd ~/.local/share/applications/
 cat <<EOT >> robo3t.desktop
