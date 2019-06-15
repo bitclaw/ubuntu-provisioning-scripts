@@ -90,9 +90,11 @@ sudo apt install gnome-web-photo
 # starting April 16, 2019. See https://www.oracle.com/technetwork/java/javase/overview/oracle-jdk-faqs.html and
 # also https://launchpad.net/~webupd8team/+archive/ubuntu/java. PPA is no longer maintained, thanks Oracle!
 # sudo apt --names-only search "openjdk-.*jre$"
+# /usr/lib/jvm/java-8-openjdk-amd64. This is the path used for importing maven projects with intellij
 sudo apt install openjdk-8-jre -y
 # Used for Java Development, previous package only installs runtime
 sudo apt install openjdk-8-jdk -y
+# sudo apt install openjdk-11-jdk -y
 sudo apt install maven
 # sudo apt install openjdk-11-jre -y
 # sudo update-alternatives --config java
