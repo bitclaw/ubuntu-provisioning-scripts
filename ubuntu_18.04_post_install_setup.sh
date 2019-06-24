@@ -134,16 +134,6 @@ sudo apt update
 # sudo apt install winetricks -y
 sudo apt install playonlinux
 
-# See https://www.percona.com/doc/percona-xtrabackup/LATEST/installation/apt_repo.html
-# https://www.percona.com/blog/2018/04/02/migrate-to-amazon-rds-with-percona-xtrabackup/
-# Installing Percona XtraBackup from Percona apt repository
-wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.deb
-sudo dpkg -i percona-release_latest.$(lsb_release -sc)_all.deb
-sudo percona-release enable-only tools release
-sudo apt update;sudo apt install percona-xtrabackup-80 -y
-# Uninstall
-# sudo apt remove percona-xtrabackup-80
-
 # Install MongoDB GUI: RoboMongo and NoSQLBooster
 curl -o robo3t-1.3.1-linux-x86_64-7419c406.tar.gz https://download-test.robomongo.org/linux/robo3t-1.3.1-linux-x86_64-7419c406.tar.gz
 tar zxvf robo3t-1.3.1-linux-x86_64-7419c406.tar.gz
