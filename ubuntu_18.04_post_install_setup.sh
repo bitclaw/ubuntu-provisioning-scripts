@@ -176,3 +176,14 @@ sudo service procps start
 
 # Install NFS server, used for vagrant shared folder sometimes
 sudo apt install nfs-kernel-server -y
+
+# Set default editor
+sudo update-alternatives --config editor
+
+# Another way to set default editor
+# $ echo $EDITOR
+# /usr/bin/nano
+
+# to set the default editor you can add the following to your shell configuration ( ~/.bashrc):
+# export VISUAL="/usr/bin/vim"
+# export EDITOR="$VISUAL"
