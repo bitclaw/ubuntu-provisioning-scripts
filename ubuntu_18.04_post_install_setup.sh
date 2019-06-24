@@ -176,6 +176,3 @@ sudo service procps start
 
 # Install NFS server, used for vagrant shared folder sometimes
 sudo apt install nfs-kernel-server -y
-
-# Install git flow
-sudo apt install git-flow
