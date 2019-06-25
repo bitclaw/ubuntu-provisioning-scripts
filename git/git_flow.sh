@@ -50,6 +50,7 @@ git flow release track RELEASE
 # Tags the release with its name
 # Back-merges the release into 'develop'
 # Removes the release branch
+# i.e:  git flow release finish 1.14.0
 git flow release finish RELEASE
 git push origin --tags
 
