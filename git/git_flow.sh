@@ -60,9 +60,11 @@ git push origin --tags
 # version.
 # The version argument hereby marks the new hotfix release name.
 # Optionally you can specify a basename to start from.
+# i.e: git flow hotfix start 1.14.1 [commit] . Commit is optional
 git flow hotfix start VERSION [BASENAME]
 
 # By finishing a hotfix it gets merged back into develop and master.
 # Additionally the master merge is tagged with the hotfix version.
+# git flow hotfix finish 1.14.1
 
 git flow hotfix finish VERSION
