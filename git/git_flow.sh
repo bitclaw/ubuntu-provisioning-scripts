@@ -8,6 +8,7 @@ sudo apt install git-flow
 git flow init
 
 # This action creates a new feature branch based on 'develop' and switches to it
+# i.e: git flow feature start feature/WEB-XXX
 git flow feature start MYFEATURE
 
 # Finish the development of a feature. This action performs the
