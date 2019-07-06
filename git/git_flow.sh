@@ -34,6 +34,7 @@ git flow feature track MYFEATURE
 # release branch created from the 'develop' branch.
 # You can optionally supply a [BASE] commit sha-1 hash to start the
 # release from. The commit must be on the 'develop' branch.
+# git flow release start 1.16.0;git flow release publish 1.16.0
 git flow release start RELEASE [BASE]
 
 # It's wise to publish the release branch after creating it to allow
