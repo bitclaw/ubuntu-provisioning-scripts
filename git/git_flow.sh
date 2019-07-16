@@ -65,6 +65,9 @@ git push origin --tags
 # i.e: git flow hotfix start 1.14.1 [commit] . Commit is optional
 git flow hotfix start VERSION [BASENAME]
 
+# Delete hotfix
+git flow hotfix delete 1.16.2
+
 # By finishing a hotfix it gets merged back into develop and master.
 # Additionally the master merge is tagged with the hotfix version.
 # git flow hotfix finish 1.14.1
