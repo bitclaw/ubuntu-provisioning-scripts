@@ -1,0 +1,28 @@
+vagrant@homestead:/etc/php/7.3/cli/conf.d$ pwd
+/etc/php/7.3/cli/conf.d
+vagrant@homestead:/etc/php/7.3/cli/conf.d$ php -v
+PHP 7.3.5-1+ubuntu18.04.1+deb.sury.org+1 (cli) (built: May  3 2019 10:00:24) ( NTS )
+Copyright (c) 1997-2018 The PHP Group
+Zend Engine v3.3.5, Copyright (c) 1998-2018 Zend Technologies
+    with Xdebug v2.7.2, Copyright (c) 2002-2019, by Derick Rethans
+    with Zend OPcache v7.3.5-1+ubuntu18.04.1+deb.sury.org+1, Copyright (c) 1999-2018, by Zend Technologies
+vagrant@homestead:/etc/php/7.3/cli/conf.d$
+
+vagrant@homestead:/etc/php/7.3/mods-available$ cat xdebug.ini
+zend_extension=xdebug.so
+xdebug.remote_enable = 1
+xdebug.remote_connect_back = 1
+xdebug.remote_port = 9000
+xdebug.max_nesting_level = 512
+
+vagrant@homestead:/etc/php/7.3/fpm/conf.d$ pwd
+/etc/php/7.3/fpm/conf.d
+vagrant@homestead:/etc/php/7.3/fpm/conf.d$ cat 20-xdebug.ini
+zend_extension=xdebug.so
+xdebug.remote_enable = 1
+xdebug.remote_connect_back = 1
+xdebug.remote_port = 9000
+xdebug.max_nesting_level = 512
+vagrant@homestead:/etc/php/7.3/fpm/conf.d$
+
+php -i
