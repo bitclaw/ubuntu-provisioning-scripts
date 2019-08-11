@@ -40,3 +40,6 @@ sudo apt-get install network-manager-openconnect-gnome -y
 # L2TP IPSec Options: Pre-shared key: test123
 # Phase 1 Algorithms: 3des-sha1-modp1024
 # Phase 2 Algorithms: 3des-sha1
+
+# Edit network connections
+# vim /etc/NetworkManager/system-connections
