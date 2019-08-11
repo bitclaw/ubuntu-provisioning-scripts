@@ -142,6 +142,9 @@ mv robo3t-1.3.1-linux-x86_64-7419c406 ~/
 cd ~/robo3t-1.3.1-linux-x86_64-7419c406/bin
 curl -o robomongo-128x128-129df2f1.png https://robomongo.org/static/robomongo-128x128-129df2f1.png
 
+# Install only mongoimport and other mongo tools without the database
+sudo apt-get install -y mongo-tools
+
 cd ~/.local/share/applications/
 cat <<EOT >> robo3t.desktop
 [Desktop Entry]
