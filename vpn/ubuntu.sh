@@ -31,3 +31,12 @@ sudo apt-get install network-manager-openconnect-gnome -y
 # Ending ike-scan 1.9: 1 hosts scanned in 0.199 seconds (5.02 hosts/sec). 1 returned handshake; 0 returned notify
 #
 # Phase1 Algorithms : 3des-sha1-modp1024 Phase2 Algorithms : 3des-sha1
+
+# IPSec VPN Config Example
+
+# Gateway: vpn.39dollarglasses.com
+# User name: test
+# Password: test
+# L2TP IPSec Options: Pre-shared key: test123
+# Phase 1 Algorithms: 3des-sha1-modp1024
+# Phase 2 Algorithms: 3des-sha1
