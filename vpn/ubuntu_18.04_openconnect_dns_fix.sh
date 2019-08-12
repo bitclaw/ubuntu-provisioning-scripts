@@ -14,7 +14,7 @@
 # Restart the network manager: sudo systemctl restart NetworkManager.service
 
 VPN_CONNECTION_NAME=CiscoAnyConnect
-VPN_CONNECTION_PATH="/etc/NetworkManager/system-connections/${VPN_CONNECTION_NAME}"
+VPN_CONNECTION_PATH="${VPN_CONNECTION_NAME}"
 
-sudo apt-get install network-manager-openconnect-gnome -y
-sed '/[ipv4]/a dns-priority=-1' ${VPN_CONNECTION_PATH}
+# sudo apt-get install network-manager-openconnect-gnome -y
+sed -i '/ipv4/a dns-priority=-1' ${VPN_CONNECTION_PATH}
