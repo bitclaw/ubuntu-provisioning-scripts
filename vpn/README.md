@@ -11,7 +11,7 @@
 # sudo apt-get install network-manager-openconnect-gnome This will add an Anyconnect compatible option to the VPN GUI
 # under your network settings.
 
-sudo apt-get install network-manager-openconnect-gnome -y
+# sudo apt-get install network-manager-openconnect-gnome -y
 # You can also initiate a connection by entering sudo openconnect YOURVPN.COM in the terminal.
 # Use Terminal again to launch the AnyConnect VPN UI program with sudo /opt/cisco/anyconnect/bin/vpnui
 
@@ -43,3 +43,17 @@ sudo apt-get install network-manager-openconnect-gnome -y
 
 # Edit network connections
 # vim /etc/NetworkManager/system-connections
+
+
+## Solve issue with openconnect-gnome internal server not resolving
+
+# https://askubuntu.com/questions/1144502/vpn-cisco-anyconnect-openconnect-plugin-stopped-setting-up-dns-on-ubuntu-18-04/1145129
+# https://www.andersaaberg.dk/2019/resolve-dns-using-vpn-openconnect-rather-than-default-isp-dns-on-ubuntu-18-04/
+#
+# However, when the VPN is turned on, it fails to use the DNS from the VPN which means that I cannot access the internal
+# websites behind the VPN unless I know the IP-adresses. I have tried many different solutions that didn’t work until I
+# found something useful (https://bugs.launchpad.net/ubuntu/+source/network-manager/+bug/1688018). Do the following:
+#
+# sudo gedit /etc/NetworkManager/system-connections/<NAME_OF_YOUR_VPN_CONNECTION>
+# Add the following to the “[ipv4]” section: dns-priority=-1
+# Restart the network manager: sudo systemctl restart NetworkManager.service
