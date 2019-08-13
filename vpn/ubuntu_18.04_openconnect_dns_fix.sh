@@ -18,3 +18,4 @@ VPN_CONNECTION_PATH="/etc/NetworkManager/system-connections/${VPN_CONNECTION_NAM
 
 sudo apt-get install network-manager-openconnect-gnome -y
 sudo sed -i '/ipv4/a dns-priority=-1' ${VPN_CONNECTION_PATH}
+sudo systemctl restart NetworkManager.service
