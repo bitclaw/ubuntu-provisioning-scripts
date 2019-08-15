@@ -54,6 +54,7 @@ git flow release track RELEASE
 # Removes the release branch
 # i.e:  git flow release finish 1.14.0
 git flow release finish RELEASE
+#  git tag -a v1.32.0 -m 'Tag release v1.32.0';git push origin --tags
 git push origin --tags
 
 # Hotfixes arise from the necessity to act immediately upon an
