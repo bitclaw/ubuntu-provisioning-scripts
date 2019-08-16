@@ -19,3 +19,12 @@ VPN_CONNECTION_PATH="/etc/NetworkManager/system-connections/${VPN_CONNECTION_NAM
 sudo apt-get install network-manager-openconnect-gnome -y
 sudo sed -i '/ipv4/a dns-priority=-1' ${VPN_CONNECTION_PATH}
 sudo systemctl restart NetworkManager.service
+
+https://www.andersaaberg.dk/2019/resolve-dns-using-vpn-openconnect-rather-than-default-isp-dns-on-ubuntu-18-04/
+https://askubuntu.com/questions/1144502/vpn-cisco-anyconnect-openconnect-plugin-stopped-setting-up-dns-on-ubuntu-18-04/1145129
+https://unix.stackexchange.com/questions/171270/openconnect-not-resolving-hostnames
+
+sudo openconnect --user Daniel.Chaves --csd-user danielc --csd-wrapper ~/csd-wrapper-download.sh --authgroup GROUP_OF_VPN us.bitclaw.com/anyconnect
+sudo openconnect --user Daniel.Chaves us.bitclaw.com/anyconnect
+
+# Another workaround I'm using is to put the internal VPNs IPs on /etc/hosts
