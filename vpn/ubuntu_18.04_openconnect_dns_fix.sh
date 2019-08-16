@@ -32,14 +32,20 @@ http://www.socsci.uci.edu/~jstern/uci_vpn_ubuntu/ubuntu-openconnect-uci-instruct
 https://computingforgeeks.com/how-to-connect-to-vpn-server-with-openconnect-ssl-vpn-client-on-linux/
 https://github.com/HenrikBengtsson/ucsf-vpn/issues/11
 http://www.infradead.org/openconnect/vpnc-script.html
+https://bugzilla.redhat.com/show_bug.cgi?id=1497750
+https://unix.stackexchange.com/questions/171270/openconnect-not-resolving-hostnames
+https://askubuntu.com/questions/124646/cannot-resolve-custom-domains-when-vpn-is-up/126527#126527
 
 https://gist.github.com/markis/7ccba4285655e087022277b0d6196195
 https://gist.github.com/l0ki000/56845c00fd2a0e76d688
 https://gist.github.com/stefancocora/686bbce938f27ef72649a181e7bd0158
 https://gist.github.com/slimbrd/f281083865feb9f93912bc9debfd83cc
 
+openconnect cannot resolve hosts
+
 sudo openconnect --user Daniel.Chaves --csd-user danielc --csd-wrapper ~/csd-wrapper-download.sh --authgroup GROUP_OF_VPN us.bitclaw.com/anyconnect
 sudo openconnect --user Daniel.Chaves us.bitclaw.com/anyconnect
+sudo openconnect --user Daniel.Chaves us.bitclaw.com/anyconnect --disable-ipv6 --passwd-on-stdin --token-mode=rsa --token-secret=XXX --resolve=HOST:IP --verbose
 
 # Another workaround I'm using is to put the internal VPNs IPs on /etc/hosts
 
