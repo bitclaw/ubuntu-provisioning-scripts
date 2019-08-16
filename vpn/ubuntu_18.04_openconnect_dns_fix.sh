@@ -40,6 +40,7 @@ https://gist.github.com/markis/7ccba4285655e087022277b0d6196195
 https://gist.github.com/l0ki000/56845c00fd2a0e76d688
 https://gist.github.com/stefancocora/686bbce938f27ef72649a181e7bd0158
 https://gist.github.com/slimbrd/f281083865feb9f93912bc9debfd83cc
+https://bbs.archlinux.org/viewtopic.php?id=245655
 
 openconnect cannot resolve hosts
 
