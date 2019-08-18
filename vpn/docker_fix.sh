@@ -14,6 +14,9 @@
 # create a container and try to ping the Docker host’s eth0 it will not work. That traffic is explicitly filtered by
 # the kernel modules themselves to offer additional provider isolation and security.
 # See https://docs.docker.com/v17.06/engine/userguide/networking/get-started-macvlan/#macvlan-bridge-mode-example-usage
+# See https://blog.oddbit.com/post/2018-03-12-using-docker-macvlan-networks/
+# See https://community.synology.com/enu/forum/15/post/120118
+# See https://container.training/intro-selfpaced.yml.html#341
 
 # Though, there is a workaround: add a bridged interface and use it as the parent. It was discussed in the old forum.
 # Hint: the bridged interface is not permanent, so you will need a startscript to add it on each start of your NAS,
