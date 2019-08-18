@@ -68,6 +68,7 @@ sudo openconnect --user Daniel.Chaves us.bitclaw.com/anyconnect --disable-ipv6 -
 # After fighting for a long time with this issue, the best solution is to do the following
 # https://blog.oddbit.com/post/2018-03-12-using-docker-macvlan-networks/
 # https://community.synology.com/enu/forum/15/post/120118
+# https://container.training/intro-selfpaced.yml.html#341
 
 
 
