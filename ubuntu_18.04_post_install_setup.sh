@@ -7,6 +7,12 @@ sudo apt-get install synaptic -y
 sudo apt-get install gnome-tweaks -y
 sudo apt-get install tilde -y
 
+# Woeusb to make Windows 10 bootable USB (https://github.com/slacka/WoeUSB)
+# https://itsfoss.com/bootable-windows-usb-linux/
+sudo add-apt-repository ppa:nilarimogard/webupd8
+sudo apt update
+sudo apt install woeusb
+
 # Enable firewall
 # sudo ufw status verbose
 # sudo ufw enable
