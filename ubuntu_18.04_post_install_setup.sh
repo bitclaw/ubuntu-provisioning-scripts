@@ -9,14 +9,14 @@ sudo apt-get install tilde -y
 
 # Woeusb to make Windows 10 bootable USB (https://github.com/slacka/WoeUSB)
 # https://itsfoss.com/bootable-windows-usb-linux/
-sudo add-apt-repository ppa:nilarimogard/webupd8
+sudo add-apt-repository ppa:nilarimogard/webupd8 -y
 sudo apt update
-sudo apt install woeusb
+sudo apt install woeusb -y
 
 # Enable firewall
 # sudo ufw status verbose
 # sudo ufw enable
-sudo add-apt-repository ppa:alexlarsson/flatpak
+sudo add-apt-repository ppa:alexlarsson/flatpak -y
 sudo apt update;sudo apt install flatpak -y
 sudo apt install gnome-software-plugin-flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -46,36 +46,35 @@ sudo apt install vokoscreen -y
 sudo apt-get install lib32z1 lib32ncurses5 -y
 # wget https://it2.umn.edu/services/all/data-network/vpn/downloads/anyconnect-linux64-4.6.03049-predeploy-k9.tar.gz
 sudo apt install openconnect -y
-# Other VPN's : Phase1 Algorithms : 3des-sha1-modp1024 Phase2 Algorithms : 3des-sha1 for l2tpsec
-sudo apt install network-manager-l2tp-gnome strongswan strongswan-plugin-openssl network-manager-l2tp strongswan-libcharon strongswan-charon strongswan-starter libstrongswan libstrongswan-standard-plugins xl2tpd
 sudo apt install python3-pip -y
 pip3 install awscli --upgrade --user
 # eval "$(ssh-agent -s)"
 curl -fsSL https://github.com/Schniz/fnm/raw/master/.ci/install.sh | bash
 sudo apt-add-repository ppa:remmina-ppa-team/remmina-next -y
 sudo apt-get update;sudo apt-get install remmina remmina-plugin-rdp libfreerdp-plugins-standard -y
-sudo apt install vim
+sudo apt install vim -y
 sudo apt upgrade
 
 # Virtualbox 6.0.6 install
 wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
 wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
-sudo add-apt-repository "deb http://download.virtualbox.org/virtualbox/debian bionic contrib"
+sudo add-apt-repository "deb http://download.virtualbox.org/virtualbox/debian bionic contrib" -y
 sudo apt update
 echo "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
 sudo apt install virtualbox-6.0 -y
 
 wget https://releases.hashicorp.com/vagrant/2.2.4/vagrant_2.2.4_x86_64.deb
 sudo dpkg -i vagrant_2.2.4_x86_64.deb
+rm vagrant_2.2.4_x86_64.deb
 vagrant plugin install vagrant-env
 
 wget https://download.virtualbox.org/virtualbox/6.0.8/Oracle_VM_VirtualBox_Extension_Pack-6.0.8.vbox-extpack
-sudo VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-6.0.8.vbox-extpack
-
+echo "y" | sudo VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-6.0.8.vbox-extpack
+rm Oracle_VM_VirtualBox_Extension_Pack-6.0.8.vbox-extpack
 sudo add-apt-repository ppa:linuxuprising/shutter -y
 sudo apt update
 sudo apt install shutter -y
-sudo apt install gnome-web-photo
+sudo apt install gnome-web-photo -y
 #wget http://ftp.us.debian.org/debian/pool/main/libg/libgoo-canvas-perl/libgoo-canvas-perl_0.06-2+b3_amd64.deb
 #wget https://debian.pkgs.org/9/debian-main-amd64/perl-base_5.24.1-3+deb9u5_amd64.deb.html
 #dpkg -i
@@ -101,24 +100,27 @@ sudo apt install openjdk-8-jre -y
 # Used for Java Development, previous package only installs runtime
 sudo apt install openjdk-8-jdk -y
 # sudo apt install openjdk-11-jdk -y
-sudo apt install maven
+sudo apt install maven -y
 # sudo apt install openjdk-11-jre -y
 # sudo update-alternatives --config java
 
 sudo apt install dconf-tools -y
+sudo apt install net-tools -y
 
 wget https://zoom.us/client/latest/zoom_amd64.deb
 sudo dpkg -i zoom_amd64.deb
+rm zoom_amd64.deb
 
 # VPN Setup
-sudo apt install network-manager-l2tp-gnome strongswan network-manager-l2tp strongswan-libcharon strongswan-charon strongswan-starter libstrongswan libstrongswan-standard-plugins xl2tpd
-sudo apt install intltool libtool network-manager-dev libnm-util-dev libnm-glib-dev libnm-glib-vpn-dev libnm-gtk-dev libnm-dev libnma-dev ppp-dev libdbus-glib-1-dev libsecret-1-dev libgtk-3-dev libglib2.0-dev xl2tpd strongswan
+# Other VPN's : Phase1 Algorithms : 3des-sha1-modp1024 Phase2 Algorithms : 3des-sha1 for l2tpsec
+sudo apt install network-manager-l2tp-gnome strongswan network-manager-l2tp strongswan-libcharon strongswan-charon strongswan-starter libstrongswan libstrongswan-standard-plugins xl2tpd -y
+sudo apt install intltool libtool network-manager-dev libnm-util-dev libnm-glib-dev libnm-glib-vpn-dev libnm-gtk-dev libnm-dev libnma-dev ppp-dev libdbus-glib-1-dev libsecret-1-dev libgtk-3-dev libglib2.0-dev xl2tpd strongswan -y
 
 # Hamachi needed dependency
 sudo apt install lsb -y
 wget https://vpn.net/installers/logmein-hamachi_2.1.0.198-1_amd64.deb
 sudo dpkg -i logmein-hamachi*.deb
-sudo service hamachi start
+rm logmein-hamachi*.deb
 
 # Install Haguichi. This is to give GUI control of Hamachi and avoid terminal commands
 sudo add-apt-repository -y ppa:webupd8team/haguichi
@@ -130,7 +132,7 @@ wget -qO - https://dl.winehq.org/wine-builds/winehq.key | sudo apt-key add -
 ###  Ubuntu 18.10
 # sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ cosmic main'
 ###  Ubuntu 18.04
-sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main'
+sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main' -y
 sudo apt update
 # sudo apt install --install-recommends winehq-stable
 # If you face unmet dependencies error during installation,
@@ -138,7 +140,7 @@ sudo apt update
 # sudo apt-get install aptitude
 # sudo aptitude install winehq-stable
 # sudo apt install winetricks -y
-sudo apt install playonlinux
+sudo apt install playonlinux -y
 
 # Install MongoDB GUI: RoboMongo and NoSQLBooster
 curl -o robo3t-1.3.1-linux-x86_64-7419c406.tar.gz https://download-test.robomongo.org/linux/robo3t-1.3.1-linux-x86_64-7419c406.tar.gz
