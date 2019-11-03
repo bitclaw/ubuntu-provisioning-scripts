@@ -206,3 +206,8 @@ chmod 644 ~/.ssh/known_hosts
 chmod 644 ~/.ssh/config
 chmod 600 ~/.ssh/id_rsa
 chmod 644 ~/.ssh/id_rsa.pub
+
+# Install fnm to manage different node versions
+curl -fsSL https://github.com/Schniz/fnm/raw/master/.ci/install.sh | bash
+source /home/danielc/.bashrc
+exit
