@@ -224,6 +224,9 @@ echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ $UBUNTU_C
 sudo apt update
 
 sudo apt install brave-browser -y
+# guake fix when exiting terminal: https://bugs.launchpad.net/ubuntu/+source/guake/+bug/1760621
+sudo apt-get install libutempter0 -y
+sudo apt install guake -y
 
 exit
 
