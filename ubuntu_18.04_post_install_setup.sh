@@ -113,8 +113,9 @@ rm zoom_amd64.deb
 
 # VPN Setup
 # Other VPN's : Phase1 Algorithms : 3des-sha1-modp1024 Phase2 Algorithms : 3des-sha1 for l2tpsec
-sudo apt install network-manager-l2tp-gnome strongswan network-manager-l2tp strongswan-libcharon strongswan-charon strongswan-starter libstrongswan libstrongswan-standard-plugins xl2tpd -y
-sudo apt install intltool libtool network-manager-dev libnm-util-dev libnm-glib-dev libnm-glib-vpn-dev libnm-gtk-dev libnm-dev libnma-dev ppp-dev libdbus-glib-1-dev libsecret-1-dev libgtk-3-dev libglib2.0-dev xl2tpd strongswan -y
+sudo add-apt-repository universe
+sudo apt-get update -y
+sudo apt-get install network-manager-l2tp-gnome libstrongswan-extra-plugins libcharon-extra-plugins -y
 
 # Hamachi needed dependency
 sudo apt install lsb -y
@@ -210,4 +211,34 @@ chmod 644 ~/.ssh/id_rsa.pub
 # Install fnm to manage different node versions
 curl -fsSL https://github.com/Schniz/fnm/raw/master/.ci/install.sh | bash
 source /home/danielc/.bashrc
+
+## Install brave browser
+sudo apt install apt-transport-https curl
+
+curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
+
+source /etc/os-release
+
+echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ $UBUNTU_CODENAME main" | sudo tee /etc/apt/sources.list.d/brave-browser-release-${UBUNTU_CODENAME}.list
+
+sudo apt update
+
+sudo apt install brave-browser -y
+# guake fix when exiting terminal: https://bugs.launchpad.net/ubuntu/+source/guake/+bug/1760621
+sudo apt-get install libutempter0 -y
+sudo apt install guake -y
+
 exit
+
+## ERROR
+
+# sudo fuser -v /var/cache/debconf/config.dat
+# Will show you what process is holding the lock:
+#
+#                      USER        PID ACCESS COMMAND
+# /var/cache/debconf/config.dat:
+#                      root      18210 F.... dpkg-preconfigu
+# Then you simply need to note down the PID and kill it like so:
+#
+# sudo kill PID
+# sudo kill -9 PID  # if the first doesn't work

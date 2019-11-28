@@ -1,5 +1,5 @@
 [connection]
-id=39dg
+id=testdg
 uuid=dcf7b1ac-bbc2-4365-b5cf-7e2cfa87c2de
 type=vpn
 autoconnect=false

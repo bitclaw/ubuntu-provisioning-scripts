@@ -1,4 +1,4 @@
-alias 39dg-web="cd ~/code/39dg/39dg-web"
+alias test-web="cd ~/code/test/test-web"
 
 [branch]
 	autosetuprebase = always
