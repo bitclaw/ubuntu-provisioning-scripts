@@ -228,6 +228,9 @@ sudo apt install brave-browser -y
 sudo apt-get install libutempter0 -y
 sudo apt install guake -y
 
+# Fix swap performance issues, see https://askubuntu.com/questions/259739/kswapd0-is-taking-a-lot-of-cpu
+echo vm.swappiness=0 | sudo tee -a /etc/sysctl.conf
+
 exit
 
 ## ERROR
