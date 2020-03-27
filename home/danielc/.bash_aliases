@@ -1,1 +1,2 @@
-alias 39dg='cd ~/code'
+alias ven='cd ~/code/ven'
+alias code='cd ~/code'
