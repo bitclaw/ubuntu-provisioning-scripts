@@ -192,6 +192,10 @@ sudo apt install nfs-kernel-server -y
 # Set default editor
 sudo update-alternatives --config editor
 
+# Install diff tool
+sudo apt-get install meld -y
+sudo apt-get install diffuse -y
+
 # Another way to set default editor
 # $ echo $EDITOR
 # /usr/bin/nano
