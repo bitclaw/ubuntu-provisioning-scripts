@@ -235,6 +235,14 @@ sudo apt install guake -y
 # Fix swap performance issues, see https://askubuntu.com/questions/259739/kswapd0-is-taking-a-lot-of-cpu
 echo vm.swappiness=0 | sudo tee -a /etc/sysctl.conf
 
+
+# Fix 800x600 resolution related to nvidia driver, also make sure bios is not in secure mode
+# https://forums.developer.nvidia.com/t/ubuntu-18-04-rog-laptop-has-unknown-display-800x600-after-updating-software/81641
+# https://forums.developer.nvidia.com/t/ubuntu-18-04-3-hdmi-external-monitor-problem-nvidia-driver-430/82655
+# https://askubuntu.com/questions/1191638/graphics-and-resolution-problems-nvidia-in-ubuntu-18-04-after-update
+# https://ubuntu-mate.community/t/18-04-3-update-caused-problems-with-display-nvidia/20929
+sudo ubuntu-drivers autoinstall
+
 exit
 
 ## ERROR
